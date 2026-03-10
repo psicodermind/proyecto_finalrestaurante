@@ -1,4 +1,4 @@
-# Proyecto Final - Restaurante Master
+# Proyecto Final - PlatoClick
 
 ## Descripción
 Este proyecto es un sistema de gestión de restaurantes que consume una API externa para mostrar información detallada sobre platos, pedidos y clientes.

@@ -1,15 +1,23 @@
 :root {
-  --primary-color: #0d6efd;
-  --secondary-color: #6c757d;
-  --bg-gradient: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  --card-hover-transform: translateY(-5px);
-  --glass-bg: rgba(255, 255, 255, 0.8);
+  --primary-color: #E2725B;
+  /* Terracotta */
+  --primary-dark: #a64d3b;
+  --primary-light: #fbe9e5;
+  --terracotta-soft: #f4d0c9;
+  /* Softer Terracotta for background */
+  --secondary-color: #7d6c6c;
+  --bg-color: #fcece9;
+  /* Very soft terracotta shade */
+  --card-hover-transform: translateY(-8px);
+  --glass-bg: rgba(255, 255, 255, 0.95);
 }
 
 body {
-  background: var(--bg-gradient);
+  background-color: var(--bg-color);
   min-height: 100vh;
   margin: 0;
+  padding: 0;
+  overflow-x: hidden;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -28,24 +36,46 @@ body {
 
 .restaurant-card:hover {
   transform: var(--card-hover-transform);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
 }
 
 .navbar {
   backdrop-filter: blur(10px);
-  background: rgba(33, 37, 41, 0.9) !important;
+  background: rgba(226, 114, 91, 0.95) !important;
+  /* Terracotta background */
+  border-bottom: 2px solid var(--primary-dark);
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  letter-spacing: -0.5px;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background: white;
+  padding: 2px;
 }
 
 .nav-link {
   font-weight: 500;
-  transition: color 0.2s ease;
+  color: white !important;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
 }
 
 .table {
   background: white;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 .table thead th {
@@ -57,11 +87,53 @@ body {
 
 .tab-content {
   background: white;
-  padding: 20px;
-  border-radius: 0 0 8px 8px;
-  border: 1px solid #dee2e6;
+  padding: 30px;
+  border-radius: 0 0 12px 12px;
+  border: 1px solid #eee;
   border-top: none;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Desktop Responsiveness & Layout Improvements */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 90% !important;
+    /* Make it wider on desktop to avoid too much empty space */
+  }
+
+  .restaurant-card {
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1400px !important;
+  }
+}
+
+.main-content {
+  flex: 1;
+  /* Occupy remaining space to push footer down */
+  width: 100%;
+}
+
+.footer {
+  background-color: white;
+  border-top: 1px solid var(--primary-light);
+  width: 100%;
+}
+
+.btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  font-weight: 600;
+  padding: 10px 20px;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark) !important;
+  border-color: var(--primary-dark) !important;
 }
 
 .nav-tabs .nav-link {
@@ -76,8 +148,15 @@ body {
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .container {

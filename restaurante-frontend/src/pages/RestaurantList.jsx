@@ -49,7 +49,7 @@ const RestaurantList = () => {
             <h2 className="mb-4 text-center">Nuestros Restaurantes</h2>
             <Row>
                 {restaurants.map((res) => (
-                    <Col key={res.restauranteID} xs={12} sm={6} md={4} className="mb-4">
+                    <Col key={res.restauranteID} xs={12} sm={6} md={4} lg={3} className="mb-4">
                         <Card className="h-100 shadow-sm border-0 restaurant-card">
                             <Card.Body className="d-flex flex-column">
                                 <Card.Title>{res.restaurante}</Card.Title>

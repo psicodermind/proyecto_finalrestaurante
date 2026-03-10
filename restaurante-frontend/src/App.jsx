@@ -2,15 +2,17 @@ import { Routes, Route, Link } from 'react-router-dom'
 import { Navbar, Container, Nav } from 'react-bootstrap'
 import RestaurantList from './pages/RestaurantList'
 import RestaurantDetail from './pages/RestaurantDetail'
+import duckLogo from './assets/duck_logo.png'
 import './App.css'
 
 function App() {
   return (
     <div className="App">
-      <Navbar bg="dark" variant="dark" expand="lg" className="mb-4 shadow-sm sticky-top">
-        <Container>
-          <Navbar.Brand as={Link} to="/">
-            <span className="fw-bold text-primary">Restaurante</span>Master
+      <Navbar variant="dark" expand="lg" className="mb-4 shadow-sm sticky-top">
+        <Container fluid className="px-5">
+          <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
+            <img src={duckLogo} alt="PlatoClick Logo" className="logo-img" />
+            <span className="fw-bold">PlatoClick</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -21,16 +23,16 @@ function App() {
         </Container>
       </Navbar>
 
-      <main className="pb-5">
+      <main className="main-content pb-5">
         <Routes>
           <Route path="/" element={<RestaurantList />} />
           <Route path="/restaurant/:id" element={<RestaurantDetail />} />
         </Routes>
       </main>
 
-      <footer className="py-4 bg-light mt-auto border-top text-center">
+      <footer className="footer py-4 text-center">
         <Container>
-          <p className="mb-0 text-muted">© 2026 Restaurante Master - Geraldine Ramírez Hernández</p>
+          <p className="mb-0 text-muted">© 2026 PlatoClick - Geraldine Ramírez Hernández</p>
         </Container>
       </footer>
     </div>
