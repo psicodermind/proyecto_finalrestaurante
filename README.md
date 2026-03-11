@@ -18,13 +18,11 @@ Este proyecto es un sistema de gestión de restaurantes que consume una API exte
 
 ## Ejecución Local
 1. **Backend**:
-   ```bash
-   cd restaurante-backend && docker-compose up -d
-   ```
+  docker-compose up -d
+
 2. **Frontend**:
-   ```bash
-   cd restaurante-frontend && npm install && npm run dev
-   ```
+   npm run dev
+
 
 Proyecto realizado por: Geraldine Ramírez Hernández
 
