@@ -16,12 +16,13 @@ const RestaurantDetail = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
+                const API_URL = import.meta.env.VITE_API_URL;
                 // Fetch everything in parallel
                 const [resResp, dishesResp, ordersResp, customersResp] = await Promise.all([
-                    fetch('http://localhost:4000/restaurants'),
-                    fetch('http://localhost:4000/dishes'),
-                    fetch('http://localhost:4000/orders'),
-                    fetch('http://localhost:4000/customers')
+                    fetch(`${API_URL}/restaurants`),
+                    fetch(`${API_URL}/dishes`),
+                    fetch(`${API_URL}/orders`),
+                    fetch(`${API_URL}/customers`)
                 ])
 
                 if (!resResp.ok || !dishesResp.ok || !ordersResp.ok || !customersResp.ok) {
@@ -79,9 +80,12 @@ const RestaurantDetail = () => {
     return (
         <Container className="mt-4">
             <Link to="/" className="btn btn-outline-secondary mb-4">← Volver</Link>
-            <div className="mb-4">
-                <h1>{data.restaurant.restaurante}</h1>
-                <Badge bg="info" className="fs-6">{data.restaurant.barrio}</Badge>
+            <div className="mb-5 text-center">
+                <h1 className="page-title">{data.restaurant.restaurante}</h1>
+                <div className="d-flex justify-content-center gap-2">
+                    <Badge bg="info" className="fs-6 px-3 py-2">{data.restaurant.barrio}</Badge>
+                    <Badge bg="secondary" className="fs-6 px-3 py-2">ID: {data.restaurant.restauranteID}</Badge>
+                </div>
             </div>
 
             <Tabs defaultActiveKey="dishes" id="restaurant-tabs" className="mb-4">

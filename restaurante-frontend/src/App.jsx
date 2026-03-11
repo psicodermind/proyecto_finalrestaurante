@@ -2,8 +2,10 @@ import { Routes, Route, Link } from 'react-router-dom'
 import { Navbar, Container, Nav } from 'react-bootstrap'
 import RestaurantList from './pages/RestaurantList'
 import RestaurantDetail from './pages/RestaurantDetail'
-import duckLogo from './assets/duck_logo.png'
+// Usando pato.png desde public
+
 import './App.css'
+
 
 function App() {
   return (
@@ -11,7 +13,7 @@ function App() {
       <Navbar variant="dark" expand="lg" className="mb-4 shadow-sm sticky-top">
         <Container fluid className="px-5">
           <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
-            <img src={duckLogo} alt="PlatoClick Logo" className="logo-img" />
+            <img src="/pato.png" alt="PlatoClick Logo" className="logo-img" />
             <span className="fw-bold">PlatoClick</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

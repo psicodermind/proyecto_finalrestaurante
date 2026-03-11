@@ -10,7 +10,8 @@ const RestaurantList = () => {
     useEffect(() => {
         const fetchRestaurants = async () => {
             try {
-                const response = await fetch('http://localhost:4000/restaurants')
+                const API_URL = import.meta.env.VITE_API_URL;
+                const response = await fetch(`${API_URL}/restaurants`)
                 if (!response.ok) {
                     throw new Error('Error fetching restaurants')
                 }
@@ -46,7 +47,7 @@ const RestaurantList = () => {
 
     return (
         <Container className="mt-4">
-            <h2 className="mb-4 text-center">Nuestros Restaurantes</h2>
+            <h1 className="page-title text-center d-block mx-auto mb-5">Nuestros Restaurantes</h1>
             <Row>
                 {restaurants.map((res) => (
                     <Col key={res.restauranteID} xs={12} sm={6} md={4} lg={3} className="mb-4">
