@@ -13,7 +13,7 @@ function App() {
       <Navbar variant="dark" expand="lg" className="mb-4 shadow-sm sticky-top">
         <Container fluid className="px-5">
           <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
-            <img src="/pato.png" alt="PlatoClick Logo" className="logo-img" />
+            <img src={`${import.meta.env.BASE_URL}pato.png`} alt="PlatoClick Logo" className="logo-img" />
             <span className="fw-bold">PlatoClick</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
